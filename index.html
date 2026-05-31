@@ -1,8 +1,186 @@
-<!--
-  CV Noemí Álvarez Lorenzo — cuerpo HTML (datos extraídos del PDF por OCR)
-  Pegar en el editor de "Contenido web" de EducaMadrid EN VISTA DE CÓDIGO FUENTE.
-  El estilo va aparte, en la caja "Css" de la página (archivo cv_noemi.css).
--->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Noemí Álvarez Lorenzo</title>
+  <style>
+/* ============================================================
+   CV Noemí Álvarez Lorenzo — estilo profesional limpio
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #f0f2f5;
+  padding: 32px 16px;
+  font-family: "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.cv-noemi {
+  --cv-acento: #1f6feb;
+  --cv-acento-osc: #134a9e;
+  --cv-tinta: #1f2933;
+  --cv-tinta-suave: #52606d;
+  --cv-linea: #e1e5ea;
+  --cv-fondo-lat: #f4f6f9;
+  --cv-radio: 10px;
+
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  color: var(--cv-tinta);
+  font-size: 16px;
+  line-height: 1.55;
+  box-shadow: 0 1px 14px rgba(0, 0, 0, 0.08);
+  border-radius: var(--cv-radio);
+  overflow: hidden;
+}
+
+/* ---------- Cabecera ---------- */
+.cv-cabecera {
+  background: linear-gradient(135deg, var(--cv-acento), var(--cv-acento-osc));
+  color: #ffffff;
+  padding: 32px 40px;
+}
+.cv-nombre {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.cv-puesto {
+  margin: 6px 0 0;
+  font-size: 1.05rem;
+  font-weight: 400;
+  opacity: 0.92;
+}
+
+/* ---------- Cuerpo a 2 columnas ---------- */
+.cv-cuerpo {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+.cv-lateral {
+  background: var(--cv-fondo-lat);
+  padding: 28px 26px;
+  border-right: 1px solid var(--cv-linea);
+}
+.cv-principal {
+  padding: 28px 34px;
+}
+
+/* ---------- Títulos de sección ---------- */
+.cv-sec-titulo {
+  margin: 0 0 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--cv-acento);
+}
+.cv-bloque { margin-bottom: 28px; }
+.cv-bloque:last-child { margin-bottom: 0; }
+
+/* ---------- Listas de contacto / datos ---------- */
+.cv-datos {
+  list-style: none;
+}
+.cv-datos li {
+  margin-bottom: 9px;
+  font-size: 0.92rem;
+  color: var(--cv-tinta-suave);
+  word-break: break-word;
+}
+.cv-datos li strong {
+  display: block;
+  color: var(--cv-tinta);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ---------- Etiquetas (competencias / idiomas) ---------- */
+.cv-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cv-tags li {
+  background: #ffffff;
+  border: 1px solid var(--cv-linea);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.84rem;
+  color: var(--cv-tinta);
+}
+
+/* ---------- Entradas de experiencia / formación ---------- */
+.cv-item {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 20px;
+}
+.cv-item:last-child { margin-bottom: 0; }
+.cv-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cv-acento);
+}
+.cv-item-rol {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--cv-tinta);
+}
+.cv-item-meta {
+  margin: 2px 0 6px;
+  font-size: 0.86rem;
+  color: var(--cv-tinta-suave);
+}
+.cv-item-meta .cv-fechas {
+  font-weight: 600;
+  color: var(--cv-acento-osc);
+}
+.cv-item p { font-size: 0.94rem; }
+.cv-item ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 0.94rem;
+}
+.cv-item ul li { margin-bottom: 4px; }
+
+.cv-perfil { font-size: 0.98rem; color: var(--cv-tinta-suave); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .cv-cuerpo { grid-template-columns: 1fr; }
+  .cv-lateral { border-right: none; border-bottom: 1px solid var(--cv-linea); }
+  .cv-cabecera { padding: 26px 24px; }
+  .cv-nombre { font-size: 1.7rem; }
+}
+
+/* ---------- Impresión ---------- */
+@media print {
+  body { background: none; padding: 0; }
+  .cv-noemi {
+    box-shadow: none;
+    border-radius: 0;
+    max-width: none;
+  }
+  .cv-cabecera {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+  </style>
+</head>
+<body>
 <div class="cv-noemi">
 
   <header class="cv-cabecera">
@@ -12,7 +190,6 @@
 
   <div class="cv-cuerpo">
 
-    <!-- ===================== BARRA LATERAL ===================== -->
     <aside class="cv-lateral">
 
       <section class="cv-bloque">
@@ -60,7 +237,6 @@
 
     </aside>
 
-    <!-- ===================== COLUMNA PRINCIPAL ===================== -->
     <main class="cv-principal">
 
       <section class="cv-bloque">
@@ -158,3 +334,5 @@
 
   </div>
 </div>
+</body>
+</html>
